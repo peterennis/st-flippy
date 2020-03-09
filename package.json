@@ -1,37 +1,35 @@
 {
-  "name": "st-flippy",
-  "private": true,
-  "version": "0.1.0",
+	"name": "st-flippy",
+	"private": true,
+	"version": "0.1.0",
 	"description": "Flip elements easily with st-flippy - built with Stencil",
 	"main": "dist/collection/index.js",
 	"types": "dist/collection/index.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
-  "files": [
-    "dist/"
+	"collection": "dist/collection/collection-manifest.json",
+	"files": [
+		"dist/"
 	],
 	"browser": "dist/stflippy.js",
-  "scripts": {
-    "build": "stencil build --prerender",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev"
-  },
-  "dependencies": {
-    "@stencil/core": "next",
-    "@stencil/router": "0.0.9"
-  },
-  "devDependencies": {
-    "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-starter.git"
-  },
-  "author": "Ionic Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
-  },
-  "homepage": "https://github.com/ionic-team/stencil"
+	"scripts": {
+		"build": "stencil build",
+		"now-build": "stencil build",
+		"start": "stencil build --dev --watch --serve",
+		"test": "stencil test --spec --e2e",
+		"test.watch": "stencil test --spec --e2e --watchAll"
+	},
+	"dependencies": {
+		"@stencil/core": "1.8.11",
+		"@stencil/router": "1.0.1"
+	},
+	"devDependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ionic-team/stencil-starter.git"
+	},
+	"author": "Ionic Team",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ionic-team/stencil"
+	},
+	"homepage": "https://github.com/ionic-team/stencil"
 }

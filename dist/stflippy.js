@@ -1,2 +1,29 @@
-/*! Built with http://stenciljs.com */
-!function(t,e,i,s,n,r,p,l,a){for((t[i]=t[i]||{}).components=p=p||[],(l=e.createElement("style")).setAttribute("data-styles",""),l.innerHTML=(p.map(function(t){return t[0]}).join(",")+"{visibility:hidden}.💎{visibility:inherit}").toLowerCase(),e.head.insertBefore(l,e.head.firstChild),i=i.toLowerCase(),a=(l=e.scripts).length-1;0<=a;a--)if(l[a].src&&l[a].src.split("/").pop()===i+".js"){s=l[a].src.replace(i+".js",i+"/");break}(l=e.createElement("script")).src=s+(t.customElements&&t.fetch?n:"stflippy.lomktnre.pf.js"),l.setAttribute("data-path",s),l.setAttribute("data-core",n),e.head.appendChild(l)}(window,document,"stflippy","/build/stflippy/","stflippy.qchoa2v2.js",0,[["ST-FLIPPY","fv9rjzte",{$:"kl62jjvf"},[["flipBackEvents",1],["flipDuration",1,2],["flipEvents",1],["flipTimingFunction",1],["isFlipped",1,1]],0,2]]);
+
+(function(doc){
+  var scriptElm = doc.scripts[doc.scripts.length - 1];
+  var warn = ['[stflippy] Deprecated script, please remove: ' + scriptElm.outerHTML];
+
+  warn.push('To improve performance it is recommended to set the differential scripts in the head as follows:')
+
+  var parts = scriptElm.src.split('/');
+  parts.pop();
+  parts.push('stflippy');
+  var url = parts.join('/');
+
+  var scriptElm = doc.createElement('script');
+  scriptElm.setAttribute('type', 'module');
+  scriptElm.src = url + '/stflippy.esm.js';
+  warn.push(scriptElm.outerHTML);
+  scriptElm.setAttribute('data-stencil-namespace', 'stflippy');
+  doc.head.appendChild(scriptElm);
+
+  scriptElm = doc.createElement('script');
+  scriptElm.setAttribute('nomodule', '');
+  scriptElm.src = url + '/stflippy.js';
+  warn.push(scriptElm.outerHTML);
+  scriptElm.setAttribute('data-stencil-namespace', 'stflippy');
+  doc.head.appendChild(scriptElm);
+
+  console.warn(warn.join('\n'));
+
+})(document);

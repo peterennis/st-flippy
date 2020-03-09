@@ -1,4 +1,4 @@
-import { Component, Prop, Element, State } from '@stencil/core';
+import { Component, Element, h, Prop, State } from '@stencil/core';
 
 /**
  * two ways of defining flip behaviour:
@@ -9,7 +9,7 @@ import { Component, Prop, Element, State } from '@stencil/core';
  */
 @Component({
 	tag: 'st-flippy',
-	styleUrl: 'st-flippy.scss'
+	styleUrl: 'st-flippy.css'
 })
 export class StFlippy {
 
@@ -39,7 +39,7 @@ export class StFlippy {
 		['front', 'back']
 			.forEach(key => {
 				const el = this.element.querySelector(`.st-flippy__${key}`);
-				el['style'].transition = `all ${duration/1000}s ${timingFunction}`;
+				el['style'].transition = `all ${duration / 1000}s ${timingFunction}`;
 			});
 	}
 
@@ -82,7 +82,7 @@ export class StFlippy {
 
 	render() {
 		return (
-			<div class={ `st-flippy ${(this.flipState ? 'st-flippy--flipped' : '')}` }>
+			<div class={`st-flippy ${(this.flipState ? 'st-flippy--flipped' : '')}`}>
 
 				{/* FRONT */}
 				<div class="st-flippy__front">
